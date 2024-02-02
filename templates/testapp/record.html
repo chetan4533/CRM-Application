@@ -1,0 +1,35 @@
+{% extends 'testapp/base.html' %}
+{% load static %}
+            {%block body_block%}
+
+            <div class="card">
+                <div class="card-header">
+                    <h5><big>{{rec.first_name}} {{rec.last_name}}</big></h5>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">
+                <ul>
+                    <li> <small> Email </small>  : {{rec.email}}</li> 
+                    <li> <small> Phone </small>: {{rec.phone}} </li> 
+                    <li> <small> Address </small>: {{rec.address}} </li> 
+                    <li> <small> Zipcode </small>: {{rec.zipcode}} </li> 
+                    <li> <small> This record created at </small>:{{rec.created_at}} </li>  </ul>
+                  </h5>
+                  
+                </div>
+             
+              </div>
+<br>
+<br>
+<a href="{% url 'home' %}" class="btn btn-secondary">Back</a>
+
+<a href="{% url 'dele_rec' rec.id %}" class="btn btn-danger">Delete</a>
+
+<a href="{% url 'update_record' rec.pk %}" class="btn btn-warning">Update</a>
+
+                  
+        
+         
+
+
+            {%endblock%}
